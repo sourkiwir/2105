@@ -1,0 +1,326 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    width:100%;
+    height:100vh;
+
+    overflow:hidden;
+
+    position:relative;
+
+    font-family:'Inter', sans-serif;
+    color:white;
+
+    background-image:url('ceu.png');
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    animation:zoomBackground 30s ease-in-out infinite alternate;
+}
+
+/* Overlay escuro */
+
+.overlay{
+    position:absolute;
+
+    width:100%;
+    height:100%;
+
+    top:0;
+    left:0;
+
+    background:
+    linear-gradient(
+        to right,
+        rgba(0,0,0,0.98),
+        rgba(0,0,0,0.55),
+        rgba(0,0,0,0.15)
+    );
+
+    z-index:1;
+}
+
+/* Conteúdo */
+
+.content{
+    position:relative;
+
+    z-index:5;
+
+    width:550px;
+
+    padding-left:70px;
+    padding-top:120px;
+
+    animation:fadeUp 2s ease;
+}
+
+/* Data */
+
+.date{
+    color:#ff8c32;
+
+    font-size:13px;
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
+}
+
+/* Título */
+
+h1{
+    font-family:'Cormorant Garamond', serif;
+
+    font-size:72px;
+
+    line-height:0.92;
+
+    margin-top:18px;
+    margin-bottom:28px;
+
+    font-weight:400;
+}
+
+h1 span{
+    color:#ff8c32;
+}
+
+/* Texto */
+
+.main-text{
+    width:420px;
+
+    color:rgba(255,255,255,0.72);
+
+    line-height:1.8;
+
+    font-size:17px;
+}
+
+/* Caixa da frase */
+
+.quote{
+    margin-top:35px;
+
+    width:390px;
+
+    padding:24px;
+
+    border-radius:22px;
+
+    border:1px solid rgba(255,140,50,0.35);
+
+    background:rgba(0,0,0,0.18);
+
+    backdrop-filter:blur(6px);
+
+    color:#ffb06f;
+
+    line-height:1.7;
+}
+
+/* Botão */
+
+.explore-btn{
+    margin-top:35px;
+
+    background:transparent;
+
+    border:1px solid #ff8c32;
+
+    color:#ff8c32;
+
+    padding:18px 28px;
+
+    border-radius:999px;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    transition:0.3s;
+}
+
+.explore-btn:hover{
+    background:#ff8c32;
+
+    color:black;
+
+    transform:translateY(-3px);
+}
+
+/* Player */
+
+.music-player{
+    position:absolute;
+
+    top:30px;
+    right:35px;
+
+    z-index:10;
+
+    display:flex;
+    align-items:center;
+    gap:15px;
+
+    padding:14px 20px;
+
+    border-radius:20px;
+
+    border:1px solid rgba(255,140,50,0.35);
+
+    background:rgba(0,0,0,0.25);
+
+    backdrop-filter:blur(8px);
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.music-player:hover{
+    transform:scale(1.03);
+}
+
+.icon{
+    width:42px;
+    height:42px;
+
+    border-radius:50%;
+
+    border:1px solid #ff8c32;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:#ff8c32;
+
+    font-size:15px;
+}
+
+.music-info{
+    display:flex;
+    flex-direction:column;
+}
+
+.song{
+    font-size:15px;
+}
+
+.artist{
+    font-size:13px;
+
+    color:rgba(255,255,255,0.6);
+}
+
+/* Animações */
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+@keyframes zoomBackground{
+
+    from{
+        background-size:100%;
+    }
+
+    to{
+        background-size:105%;
+    }
+
+}
+
+/* RESPONSIVIDADE */
+
+@media(max-width: 900px){
+
+    body{
+        overflow:auto;
+    }
+
+    .content{
+        width:100%;
+        padding-left:30px;
+        padding-right:30px;
+        padding-top:120px;
+    }
+
+    h1{
+        font-size:54px;
+    }
+
+    .main-text,
+    .quote{
+        width:100%;
+        max-width:420px;
+    }
+
+}
+
+@media(max-width: 600px){
+
+    .music-player{
+        top:20px;
+        right:20px;
+
+        padding:10px 14px;
+        gap:10px;
+    }
+
+    .icon{
+        width:36px;
+        height:36px;
+
+        font-size:13px;
+    }
+
+    .song{
+        font-size:13px;
+    }
+
+    .artist{
+        font-size:11px;
+    }
+
+    .content{
+        padding-top:140px;
+    }
+
+    h1{
+        font-size:42px;
+    }
+
+    .main-text{
+        font-size:15px;
+        line-height:1.7;
+    }
+
+    .quote{
+        padding:18px;
+        font-size:14px;
+    }
+
+    .explore-btn{
+        width:100%;
+        max-width:280px;
+    }
+
+}

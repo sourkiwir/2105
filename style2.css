@@ -1,0 +1,223 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    min-height:100vh;
+
+    display:flex;
+    flex-direction:column;
+
+    align-items:center;
+    justify-content:center;
+
+    padding:80px 20px;
+
+    overflow-x:hidden;
+
+    font-family:'Quicksand', sans-serif;
+
+    color:white;
+
+    background-image:
+    linear-gradient(
+        rgba(0,0,0,0.82),
+        rgba(0,0,0,0.88)
+    ),
+    url('ceu2.png');
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+}
+
+/* CARTA */
+
+.carta{
+
+    width:900px;
+
+    max-width:100%;
+
+    padding:70px;
+
+    border-radius:35px;
+
+    background:rgba(255,255,255,0.04);
+
+    backdrop-filter:blur(12px);
+
+    border:1px solid rgba(255,140,50,0.18);
+
+    box-shadow:
+    0 0 60px rgba(255,140,50,0.05);
+
+    animation:fadeUp 2s ease;
+
+    position:relative;
+}
+
+/* etiqueta observatório */
+
+.carta::before{
+
+    content:"TRANSMISSÃO FINAL";
+
+    position:absolute;
+
+    top:-16px;
+    left:35px;
+
+    background:#0b1020;
+
+    padding:7px 16px;
+
+    border-radius:999px;
+
+    font-size:11px;
+
+    letter-spacing:4px;
+
+    color:#ff8c32;
+}
+
+/* título */
+
+.carta h1{
+
+    font-size:58px;
+
+    font-weight:400;
+
+    margin-bottom:45px;
+
+    color:#ffb067;
+
+    letter-spacing:2px;
+}
+
+/* texto */
+
+.carta p{
+
+    color:rgba(255,255,255,0.82);
+
+    line-height:2.2;
+
+    font-size:18px;
+
+    margin-bottom:22px;
+}
+
+/* brilho suave */
+
+.carta:hover{
+
+    border:1px solid rgba(255,140,50,0.35);
+
+    transition:0.4s;
+}
+
+/* animação */
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+.final-line{
+
+    margin-top:50px;
+
+    text-align:center;
+
+    color:#ff8c32;
+
+    font-style:italic;
+
+    letter-spacing:2px;
+
+    opacity:0.8;
+}
+
+/* RESPONSIVIDADE */
+
+@media(max-width: 900px){
+
+    .carta{
+
+        width:100%;
+
+        padding:45px 28px;
+    }
+
+    .carta h1{
+
+        font-size:42px;
+    }
+
+    .carta p{
+
+        font-size:16px;
+
+        line-height:2;
+    }
+
+}
+
+@media(max-width: 600px){
+
+    body{
+        padding:60px 15px;
+    }
+
+    .carta{
+
+        padding:35px 22px;
+
+        border-radius:25px;
+    }
+
+    .carta::before{
+
+        left:20px;
+
+        font-size:9px;
+
+        letter-spacing:3px;
+    }
+
+    .carta h1{
+
+        font-size:34px;
+
+        margin-bottom:30px;
+    }
+
+    .carta p{
+
+        font-size:15px;
+
+        line-height:1.9;
+    }
+
+    .final-line{
+
+        font-size:13px;
+
+        padding:0 10px;
+    }
+
+}
